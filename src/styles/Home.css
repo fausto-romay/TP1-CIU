@@ -1,0 +1,11 @@
+.home-contenedor {
+    text-align: center;
+}
+
+.home-video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10pxs;
+    margin: 1rem 0;
+}
+

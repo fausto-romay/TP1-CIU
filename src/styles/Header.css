@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.header-logo {
+    width: 200px;
+    height: auto;
+}
+
+.header-titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
