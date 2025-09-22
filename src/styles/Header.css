@@ -1,8 +1,32 @@
 header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.header-left {
+    display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-nav a:hover {
+    color: #a67c42;
 }
 
 .header-logo {
