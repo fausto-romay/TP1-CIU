@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useState } from "react";
+import Header from "../components/Header";
+import { Link } from "react-router-dom";
 
 function Carta() {
+    /*
     useEffect(() => {
         const timer = setTimeout(() => {
             alert("¡Hace click en el producto si queres sumarlo al carrito!");
@@ -8,10 +11,12 @@ function Carta() {
 
         return () => clearTimeout(timer);
     }, []);
-
-    return (
-        <h1>Página 2</h1>
-    )
+    */
+   return (
+    <div>
+        <Header></Header>
+    </div>
+   );
 }
 
 export default Carta;
