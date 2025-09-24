@@ -1,7 +1,6 @@
-import productos from "../mocks/productos.json"
 import "../styles/Productos.css"
 
-function Productos() {
+function Productos({productos}) {
 
 return (
     <main className="productos-contenedor">
