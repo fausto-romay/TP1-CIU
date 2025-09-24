@@ -4,22 +4,22 @@ function Footer(){
     return(
         <footer>
             <div>
-            <ul className="nav flex-column">
-                <li className="nav-item">
+            <ul className="nav d-flex justify-content-center">
+                <li className="nav-item d-flex justify-content-center">
                     <a className="nav-link active" aria-current="page" href="#">Active</a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item d-flex justify-content-center">
                     <a className="nav-link" href="#">Link</a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item d-flex justify-content-center">
                     <a className="nav-link" href="#">Link</a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item d-flex justify-content-center">
                     <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
             </div>
-            <div>
+            <div className= "d-flex justify-content-center">
                 <p>© 2024 Café Luna - Todos los derechos reservados</p>
             </div>
             <div>
