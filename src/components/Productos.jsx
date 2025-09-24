@@ -8,13 +8,13 @@ return (
             {productos.map(producto => {
                 return (
                 <li key={producto.id}>
-                    <img src="#" alt={producto.nombre} />
+                    <img src={producto.imagen} alt={producto.nombre} />
                     <div>
                         <strong>{producto.nombre}</strong> - ${producto.precio}
                     </div>
                     <div>
                     <button>
-                        Agregar al carrito
+                        🛒
                     </button>
                     </div>
                 </li>

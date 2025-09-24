@@ -1,0 +1,38 @@
+.filtros-contenedor {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.filtros-contenedor div {
+    gap: 0.5rem;
+}
+
+.filtros-contenedor label {
+    font-size: 1.2rem;
+    margin: 2rem;
+    font-weight: bold;
+    color: #a0522d;
+    text-transform: uppercase;
+}
+
+.filtros-contenedor select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: #a0522d 2px solid;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.filtros-contenedor select:focus {
+    outline: none;
+    border: #a0522d 2px solid;
+    box-shadow: 0 0 5px #a0522d;
+}
+
+.filtros-contenedor option {
+    padding: 0.5rem;
+    font-weight: 200;
+    text-transform: uppercase;
+}

@@ -1,3 +1,5 @@
+import "../styles/Filtros.css"
+
 function Filtros({onChange}) {
 
     const cambioCategoria = (event) => {
@@ -8,7 +10,7 @@ function Filtros({onChange}) {
     }
 
     return (
-        <section>
+        <section className="filtros-contenedor">
             <div>
                 <label htmlFor="categoria">Categoria</label>
                 <select id='categoria' onChange={cambioCategoria}>

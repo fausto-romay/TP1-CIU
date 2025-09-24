@@ -1,9 +1,10 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Productos from "../components/Productos";
-import productosIniciales from "../mocks/productos.json"
+import productosIniciales from "../data"
 import { useState } from "react";
 import Filtros from "../components/Filtros";
+import "../styles/Carta.css"
 
 function Carta() {
 
@@ -27,8 +28,8 @@ function Carta() {
     return (
         <>
         <Header />
-        <div className="container">
-            <h1 className="text-center my-5">Carta</h1>
+        <div className="carta-contenedor">
+            <h1>CARTA</h1>
         </div>
         <Filtros onChange = {setFiltro}/>
         <Productos productos={productosFiltrados}/>
