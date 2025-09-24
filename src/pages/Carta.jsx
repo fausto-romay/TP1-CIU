@@ -34,5 +34,4 @@ function Carta() {
         </>
     )
 }
-
-export default Carta
+export default Carta;
