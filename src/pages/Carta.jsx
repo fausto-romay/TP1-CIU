@@ -1,17 +1,38 @@
-import { useEffect } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Productos from "../components/Productos";
+import {productos as productosIniciales} from "../mocks/productos.json"
+import { useState } from "react";
 
 function Carta() {
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            alert("¡Hace click en el producto si queres sumarlo al carrito!");
-        }, 500);
 
-        return () => clearTimeout(timer);
-    }, []);
+    const [productos] = useState(productosIniciales);
+
+    const [filtro, setFiltro] = useState({
+        categoria: "Todos"
+    });
+
+    const filtrarProductos = (productos) => {
+        return (productos.filter(producto => {
+            return (
+                filtro.categoria === "Todos" || filtro.categoria === producto.categoria
+            )
+        })
+        )
+    };
+
+    const productosFiltrados = filtrarProductos(productos);
 
     return (
-        <h1>Página 2</h1>
+        <>
+        <Header />
+        <div className="container">
+            <h1 className="text-center my-5">Carta</h1>
+        </div>
+        <Productos productos={productosFiltrados}/>
+        <Footer/>
+        </>
     )
 }
 
-export default Carta;
+export default Carta

@@ -1,34 +1,33 @@
+import { Link } from "react-router-dom";
 import "../styles/Header.css";
-import logo from "../assets/luna.png";
+
 
 function Header() {
     return (
-        <header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <header>
+        <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-            <a className="navbar-brand" href="#">
-                <img src={logo} alt="Logo" className="d-inline-block align-text-top" />
-            </a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <Link className="navbar-brand mx-3" to="/"><img to = "/Logo" alt="Logo" /></Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
-                <li className="nav-item">
-                    <a className="nav-link active" href="#">INICIO</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">CARTA</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">CONTACTO</a>
-                </li>
+                    <li className="nav-item">
+                    <Link className="nav-link mx-3" to="/Carta">Carta</Link>
+                    </li>
+                    <li className="nav-item">
+                    <Link className="nav-link mx-3" to="/" >Contacto</Link>
+                    </li>
+                    <li className="nav-item">
+                    <Link className="nav-link mx-3" to="/" >Carrito</Link>
+                    </li>
                 </ul>
-            </div>
+                </div>
             </div>
         </nav>
-        </header>
-    );
-};
+    </header>
+    )
+}
 
-export default Header;
+export default Header

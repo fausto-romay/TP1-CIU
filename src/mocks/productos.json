@@ -1,0 +1,12 @@
+[
+  { "id": 1, "nombre": "Café Expreso", "precio": 150, "categoria": "bebida" },
+  { "id": 2, "nombre": "Café con Leche", "precio": 200, "categoria": "bebida" },
+  { "id": 3, "nombre": "Capuchino", "precio": 250, "categoria": "bebida" },
+  { "id": 4, "nombre": "Latte", "precio": 270, "categoria": "bebida" },
+  { "id": 5, "nombre": "Té Verde", "precio": 180, "categoria": "bebida" },
+  { "id": 6, "nombre": "Jugo de Naranja", "precio": 220, "categoria": "bebida" },
+  { "id": 7, "nombre": "Tostada con Manteca", "precio": 120, "categoria": "comida" },
+  { "id": 8, "nombre": "Croissant", "precio": 200, "categoria": "comida" },
+  { "id": 9, "nombre": "Sándwich de Jamón y Queso", "precio": 350, "categoria": "comida" },
+  { "id": 10, "nombre": "Ensalada de Frutas", "precio": 300, "categoria": "comida" }
+]
