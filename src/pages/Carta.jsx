@@ -2,11 +2,17 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Productos from "../components/Productos";
 import productosIniciales from "../data"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Filtros from "../components/Filtros";
 import "../styles/Carta.css"
 
 function Carta() {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            alert("Hace click en un producto para agregar al carrito 🛒");
+        }, 1000);
+        return () => clearTimeout(timer); 
+    }, []);
 
     const [productos] = useState(productosIniciales);
 
@@ -24,7 +30,6 @@ function Carta() {
     };
 
     const productosFiltrados = filtrarProductos(productos);
-
     return (
         <>
         <Header />

@@ -1,11 +1,11 @@
 import Header from "../components/Header";
-function Carrito() {
+function Contacto() {
     return (
         <>
             <Header />
-            <h1>CARRITO</h1>
+            <h1>CONTACTO</h1>
         </>
     )
 };
 
-export default Carrito;
+export default Contacto;

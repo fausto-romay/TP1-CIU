@@ -16,16 +16,16 @@ function Header() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                    <Link className="nav-link mx-3" to="/Carta">INICIO</Link>
+                    <Link className="nav-link mx-3" to="/">INICIO</Link>
                     </li>
                     <li className="nav-item">
                     <Link className="nav-link mx-3" to="/Carta">CARTA</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link mx-3" to="/" >CONTACTO</Link>
+                    <Link className="nav-link mx-3" to="/Contacto" >CONTACTO</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link mx-3" to="/" >CARRITO</Link>
+                    <Link className="nav-link mx-3" to="/Carrito" >CARRITO</Link>
                     </li>
                 </ul>
                 </div>
