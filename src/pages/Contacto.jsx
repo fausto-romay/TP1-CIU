@@ -1,9 +1,11 @@
 import Header from "../components/Header";
+import Formulario from "../components/Formulario";
+
 function Contacto() {
     return (
         <>
             <Header />
-            <h1>CONTACTO</h1>
+            <Formulario />
         </>
     )
 };

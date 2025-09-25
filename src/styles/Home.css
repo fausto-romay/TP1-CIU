@@ -13,3 +13,12 @@
     height: 500px;    
     object-fit: cover; 
 }
+
+.home-oferta-img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;    /* ocupa todo el ancho de la ventana */
+    height: auto;    /* mantiene proporción */
+    display: block;  /* evita espacio extra */
+}
