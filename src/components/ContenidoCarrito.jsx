@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { Context } from "../context/Context";
 
-function contenidoCarrito() {
-
+function ContenidoCarrito() {
     const {carrito} = useContext(Context)
 
     return carrito.map((product) => {
@@ -17,5 +16,5 @@ function contenidoCarrito() {
 
 }
 
-export default contenidoCarrito
+export default ContenidoCarrito;
 
