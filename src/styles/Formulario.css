@@ -1,0 +1,90 @@
+.formulario-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.campo {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.campo input,
+.campo textarea {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.mensaje {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.mensaje.exito {
+    color: green;
+}
+
+.mensaje.error {
+    color: red;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 600px) {
+    .formulario-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .formulario-container h1 {
+        font-size: 1.3rem;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/Formulario.css";
 
 function Formulario() {
     const [form, setForm] = useState({
@@ -69,7 +70,7 @@ function Formulario() {
     }
 
     return (
-        <div style={{maxWidth: "400px", margin: "0 auto"}}>
+        <div className="formulario-container">
             <h1>FORMULARIO DE RESERVA</h1>
 
             {enviado && (
@@ -77,23 +78,23 @@ function Formulario() {
             )}
 
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="campo">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" value={form.nombre} onChange={handleChange} />
                 </div>
-                <div>
+                <div className="campo">
                     <label>Email:</label>
                     <input type="email" name="email" value={form.email} onChange={handleChange} />
                 </div>
-                <div>
+                <div className="campo">
                     <label>Fecha de la reserva:</label>
                     <input type="date" name="fecha" value={form.fecha} onChange={handleChange} min={fechaActual} />
                 </div>
-                <div>
+                <div className="campo">
                     <label>Hora de la reserva:</label>
                     <input type="time" name="hora" value={form.hora} onChange={handleChange} />
                 </div>
-                <div>
+                <div className="campo">
                     <label>Mensaje / Detalle de la reserva:</label>
                     <textarea name="mensaje" value={form.mensaje} onChange={handleChange}></textarea>
                 </div>
