@@ -18,7 +18,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: 100vw;    /* ocupa todo el ancho de la ventana */
-    height: auto;    /* mantiene proporción */
-    display: block;  /* evita espacio extra */
+    width: 100vw;   
+    height: auto;   
+    display: block; 
 }

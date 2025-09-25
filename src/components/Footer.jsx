@@ -1,3 +1,5 @@
+import "../styles/Footer.css";
+
 function Footer() {
     return (
         <footer className="bg-secondary text-light py-4 mt-5">

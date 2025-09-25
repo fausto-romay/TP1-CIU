@@ -34,7 +34,7 @@
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: #a0522d; /* marrón café */
+    color: #a0522d; 
 }
 
 @media (max-width: 991px) {
