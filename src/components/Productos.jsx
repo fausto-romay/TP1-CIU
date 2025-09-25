@@ -1,6 +1,14 @@
 import "../styles/Productos.css"
+import { Context } from "../context/Context"
+import { useContext } from "react"
 
 function Productos({productos}) {
+
+    const {carrito, setCarrito} = useContext(Context)
+
+    const agregarAlCarrito = (producto) => {
+        setCarrito([...carrito, producto])
+    }
 
 return (
     <main className="productos-contenedor">
@@ -13,7 +21,7 @@ return (
                         <strong>{producto.nombre}</strong> - ${producto.precio}
                     </div>
                     <div>
-                    <button>
+                    <button onClick={() => agregarAlCarrito(producto)}>
                         🛒
                     </button>
                     </div>
