@@ -1,9 +1,11 @@
 import Header from "../components/Header";
+import ContenidoCarrito from "../components/contenidoCarrito";
+
 function Carrito() {
     return (
         <>
             <Header />
-            <h1>CARRITO</h1>
+            <ContenidoCarrito />
         </>
     )
 };
