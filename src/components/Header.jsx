@@ -5,7 +5,7 @@ import logo from "../assets/luna.png";
 function Header() {
     return (
     <header>
-        <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 <Link className="navbar-brand mx-3" to="/">
                     <img src={logo} alt="Logo" style={{ height: "50px" }} />
