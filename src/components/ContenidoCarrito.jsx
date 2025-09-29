@@ -6,7 +6,6 @@ function ContenidoCarrito() {
 
     return (
         <>
-            <h1 className="text-center md-3 pb-5">Carrito de compras</h1>
             <div className="container my-4">
                 <div className="row g-3">
                     {carrito.map((product) => (

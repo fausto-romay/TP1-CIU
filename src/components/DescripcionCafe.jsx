@@ -13,7 +13,7 @@ function DescripcionCafe() {
                     </p>
                     <div className="d-flex justify-content-center mt-4">
                         <Link to="/carta" className="btn btn-dark btn-lg rounded-pill px-4">
-                            NOSOTROS
+                            VER CARTA
                         </Link>
                     </div>
                 </div>
