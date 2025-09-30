@@ -52,11 +52,11 @@ function Footer() {
                 </div>
 
                 <div className="row justify-content-center">
-                    <p className="p-1 my-auto">@2025 Luna & Granos Cafés - Diseñado por grupo nº 10</p>
+                    <p className="p-1 my-auto">©2025 Luna & Granos Cafés - Diseñado por grupo nº 10 (CIU-UNAHUR)</p>
                 </div>
 
             </div>
-
+            
         </footer>
     )
 }
