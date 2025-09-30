@@ -13,11 +13,12 @@
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
-.navbar-brand img {
-    height: 50px;
+.logo-img {
+    height: 5em;
+    max-height: 70px; 
+    width: auto;
 }
 
 .navbar-nav {
@@ -37,9 +38,35 @@
     color: #a0522d; 
 }
 
+.navbar-toggler {
+    border: none;
+    padding: 10px;
+    width: 48px;   
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (max-width: 991px) {
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
     .navbar-nav {
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo-img {
+        height: 40px; 
+    }
+
+    .navbar-toggler {
+        width: 44px;
+        height: 44px;
+        padding: 8px;
     }
 }
