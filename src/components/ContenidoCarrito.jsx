@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { Context } from "../context/Context";
-import "../styles/ContenidoCarrito.css"
+import "../styles/ContenidoCarrito.css";
 
 function ContenidoCarrito() {
-    const { carrito } = useContext(Context);
+    const { carrito, setCarrito } = useContext(Context);
 
     // Agrupa cantidad por producto
     const cantidadPorProducto = carrito.reduce((cant, item) => {
@@ -23,6 +23,26 @@ function ContenidoCarrito() {
         const precioNumerico = parseFloat(prod.precio.toString().replace(/[^0-9.-]+/g,""));
         return acc + precioNumerico * prod.cantidad;
     }, 0);
+
+    // Función para aumentar cantidad
+    const aumentarCantidad = (id) => {
+        setCarrito([...carrito, carrito.find(p => p.id === id)]);
+    }
+
+    // Función para disminuir cantidad
+    const disminuirCantidad = (id) => {
+        const index = carrito.findIndex(p => p.id === id);
+        if (index !== -1) {
+            const nuevoCarrito = [...carrito];
+            nuevoCarrito.splice(index, 1); // elimina un solo item
+            setCarrito(nuevoCarrito);
+        }
+    }
+
+    // Función para eliminar producto completo
+    const eliminarProducto = (id) => {
+        setCarrito(carrito.filter(p => p.id !== id));
+    }
 
     if (carrito.length > 0) {
         return (
@@ -46,6 +66,11 @@ function ContenidoCarrito() {
                                         <h5 className="m-0" style={{ fontSize: "1rem" }}>
                                             {product.nombre} x {product.cantidad}
                                         </h5>
+                                        <div className="mt-2">
+                                            <button className="btn btn-sm btn-outline-dark me-1" onClick={() => disminuirCantidad(product.id)}>-</button>
+                                            <button className="btn btn-sm btn-outline-dark me-1" onClick={() => aumentarCantidad(product.id)}>+</button>
+                                            <button className="btn btn-sm btn-danger" onClick={() => eliminarProducto(product.id)}>Eliminar</button>
+                                        </div>
                                     </div>
 
                                     <div className="flex-shrink-0 text-end product-price" style={{ minWidth: "20%" }}>
