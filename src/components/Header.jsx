@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import logo from "../assets/luna.png";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
 function Header() {
+    const { carrito } = useContext(Context);
+    const cantidadTotal = carrito.reduce((cant) => cant + 1, 0);
+
     return (
         <header>
             <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary pt-2">
@@ -36,7 +41,7 @@ function Header() {
                                 <Link className="nav-link mx-3" to="/Contacto" >CONTACTO</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link mx-3" to="/Carrito" >CARRITO (0)</Link>
+                                <Link className="nav-link mx-3" to="/Carrito" >CARRITO ({cantidadTotal})</Link>
                             </li>
                         </ul>
                     </div>
