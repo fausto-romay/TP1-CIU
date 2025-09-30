@@ -1,0 +1,23 @@
+/* src/styles/DescripcionNosotros.css o dentro de components */
+.descripcion-nosotros {
+    background-color: #f8f9fa; /* un gris claro de fondo para destacar */
+}
+
+.descripcion-nosotros h2 {
+    color: #343a40;
+}
+
+.descripcion-nosotros .lead {
+    color: #495057;
+}
+
+.descripcion-nosotros p {
+    color: #6c757d;
+}   
+
+/* Para pantallas pequeñas, asegurar buen espaciado */
+@media (max-width: 767px) {
+    .descripcion-nosotros .ratio {
+        margin-top: 1.5rem;
+    }
+}

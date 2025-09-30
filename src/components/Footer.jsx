@@ -33,7 +33,7 @@ function Footer() {
                                 </svg>
                             </a>
                         </div>
-                        <p className="my-3">📍 Calle falsa 123 - CABA, Buenos Aires</p>
+                        <p className="my-3">📍 Suipacha 384 - CABA, Buenos Aires</p>
                     </div>
                     <div className="col d-flex justify-content-center">
                         <ul className="navbar-nav d-flex flex-column justify-content-center">
@@ -41,7 +41,7 @@ function Footer() {
                             <Link className="nav-link px-2" to='/Contacto'>RESERVÁ CON NOSOTROS</Link>
                             </li>
                             <li className="nav-item border-bottom">
-                            <Link className="nav-link px-2" to=''>SOBRE NOSOTROS</Link>
+                            <Link className="nav-link px-2" to='/Nosotros'>SOBRE NOSOTROS</Link>
                             </li>
                             <li className="nav-item border-bottom">
                             <Link className="nav-link px-2" to='/Carta'>NUESTRA CARTA</Link>
