@@ -2,12 +2,14 @@ import "../styles/Productos.css"
 import { Context } from "../context/Context"
 import { useContext } from "react"
 
-function Productos({productos}) {
-
+function Productos({productos, onAddCarrito}) {
     const {carrito, setCarrito} = useContext(Context)
 
     const agregarAlCarrito = (producto) => {
         setCarrito([...carrito, producto])
+        if (onAddCarrito) {
+            onAddCarrito(producto);
+        }
     }
 
 return (
@@ -33,4 +35,4 @@ return (
 
 }
 
-export default Productos
+export default Productos;

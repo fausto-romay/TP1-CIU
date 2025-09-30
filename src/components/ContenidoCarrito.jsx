@@ -33,7 +33,6 @@ function ContenidoCarrito() {
                             <div className="p-3 border-top border-bottom product-item">
                                 <div className="d-flex align-items-center justify-content-between flex-wrap product-content">
 
-                                    {/* Imagen */}
                                     <div className="flex-shrink-0 product-image me-3">
                                         <img
                                             src={product.imagen}
@@ -43,14 +42,12 @@ function ContenidoCarrito() {
                                         />
                                     </div>
 
-                                    {/* Nombre + cantidad */}
                                     <div className="flex-grow-1 text-center product-name" style={{ minWidth: "40%" }}>
                                         <h5 className="m-0" style={{ fontSize: "1rem" }}>
                                             {product.nombre} x {product.cantidad}
                                         </h5>
                                     </div>
 
-                                    {/* Precio */}
                                     <div className="flex-shrink-0 text-end product-price" style={{ minWidth: "20%" }}>
                                         <h6 className="m-0 fw-bold" style={{ fontSize: "0.9rem" }}>
                                             ${product.precio}

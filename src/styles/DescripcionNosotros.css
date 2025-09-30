@@ -1,6 +1,5 @@
-/* src/styles/DescripcionNosotros.css o dentro de components */
 .descripcion-nosotros {
-    background-color: #f8f9fa; /* un gris claro de fondo para destacar */
+    background-color: #f8f9fa; 
 }
 
 .descripcion-nosotros h2 {
@@ -15,7 +14,6 @@
     color: #6c757d;
 }   
 
-/* Para pantallas pequeñas, asegurar buen espaciado */
 @media (max-width: 767px) {
     .descripcion-nosotros .ratio {
         margin-top: 1.5rem;
