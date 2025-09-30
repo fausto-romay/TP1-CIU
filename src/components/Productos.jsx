@@ -20,7 +20,7 @@ return (
                 <li key={producto.id}>
                     <img src={producto.imagen} alt={producto.nombre} />
                     <div>
-                        <strong>{producto.nombre}</strong> - ${producto.precio}
+                        <strong>{producto.nombre}</strong> ${producto.precio}
                     </div>
                     <div>
                     <button onClick={() => agregarAlCarrito(producto)}>
