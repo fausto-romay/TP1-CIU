@@ -15,8 +15,10 @@ function Filtros({onChange}) {
                 <label htmlFor="categoria">Categoria</label>
                 <select id='categoria' onChange={cambioCategoria}>
                     <option value='Todos'>Todas</option>
-                    <option value='bebida'>Bebidas</option>
-                    <option value='comida'>Comidas</option>
+                    <option value='cafe'>Cafe</option>
+                    <option value='pasteleria'>
+                        Pasteleria
+                    </option>
                 </select>
             </div>
         </section>

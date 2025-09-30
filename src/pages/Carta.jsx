@@ -43,9 +43,9 @@ function Carta() {
         <>
         <Header />
         <div className="carta-contenedor">
-            <h1>CARTA</h1>
-        </div>
+        <h1>{filtro.categoria == "Todos" ? "Nuestra Carta" : filtro.categoria == "cafe" ? "Especialidades en Cafe" : "Nuestra Seleccion de Pasteleria"}</h1>
         <Filtros onChange = {setFiltro}/>
+        </div>
         <Productos productos={productosFiltrados} onAddCarrito={mostrarToast}/>
         <Footer/>
         <ToastCarrito

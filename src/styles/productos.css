@@ -1,3 +1,9 @@
+.productos-contenedor {
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+
 
 .productos-contenedor ul {
     display: grid;
@@ -45,4 +51,10 @@
 
 .productos-contenedor button:hover {
     background-color: #8b3e1a;
+}
+
+.productos-contenedor img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
