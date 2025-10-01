@@ -51,7 +51,7 @@ function Carta() {
                 exit={{opacity: 0, y: -20}}
                 transition={{duration: 0.3}}
                 >
-                {filtro.categoria == "Todos" ? "Nuestra Carta" : filtro.categoria == "cafe" ? "Especialidades en Cafe" : "Nuestra Seleccion de Pasteleria"}
+                {filtro.categoria == "Todos" ? "Nuestra Carta" : filtro.categoria == "Cafeteria" ? "Especialidades en Cafe" : "Nuestra Seleccion de Pasteleria"}
                 </motion.h1>
             </AnimatePresence>
         <Filtros onChange = {setFiltro}/>

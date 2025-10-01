@@ -1,4 +1,6 @@
 import "../styles/Filtros.css"
+import {motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 function Filtros({onChange}) {
 
@@ -9,20 +11,42 @@ function Filtros({onChange}) {
         }))
     }
 
-    return (
-        <section className="filtros-contenedor">
-            <div>
-                <label htmlFor="categoria">Categoria</label>
-                <select id='categoria' onChange={cambioCategoria}>
-                    <option value='Todos'>Todas</option>
-                    <option value='cafe'>Cafe</option>
-                    <option value='pasteleria'>
-                        Pasteleria
-                    </option>
-                </select>
-            </div>
-        </section>
-    )
-}
+    const [abierto, setAbierto] = useState(false);
+    const [categoria, setCategoria] = useState("Todos");
 
+    const seleccionarCategoria = (categoria) => {
+        setCategoria(categoria);
+        setAbierto(false);
+        cambioCategoria({ target: { value: categoria } });
+    }
+
+  return (
+    <div className="filtros-contenedor">
+
+      <motion.div
+        className="menu-boton"
+        whileTap={{ scale: 0.95 }}
+        onClick={() => setAbierto(!abierto)}
+      >
+        {categoria}
+      </motion.div>
+
+      <AnimatePresence>
+        {abierto && (
+          <motion.ul
+            className="menu-opciones"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            <li onClick={() => seleccionarCategoria("Todos")}>Todos</li>
+            <li onClick={() => seleccionarCategoria("Cafeteria")}>Cafeteria</li>
+            <li onClick={() => seleccionarCategoria("Pasteleria")}>Pastelería</li>
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 export default Filtros;

@@ -1,10 +1,10 @@
 .carta-contenedor {
-    margin: 0;
     text-align: center;
-    display: flex;
     align-items: center;
-    justify-content: space-around;
-    animation: fadeIn 1s ease; 
+    animation: fadeIn 1s ease;
+    background: url("https://www.transparenttextures.com/patterns/white-wall.png");
+    background-color: #faf8f5;
+    padding: 2rem;
 }
 
 .carta-contenedor h1 {
@@ -14,16 +14,12 @@
     letter-spacing: 1px;
     animation: fadeIn 0.5s ease forwards;
     color : #8b3e1a;
+    margin: 2rem;
 }
 
 @media (max-width: 768px) {
-    .carta-contenedor {
-        flex-direction: column;
-        gap: 1rem;
-        margin: 20px 0 0 0;
-    }
-    
-    .carta-contenedor h1 {
+
+.carta-contenedor h1 {
         font-size: 2rem;
     }
 }

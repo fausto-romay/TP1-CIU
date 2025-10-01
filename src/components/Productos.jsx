@@ -32,7 +32,10 @@ return (
               <strong>{producto.nombre}</strong> ${producto.precio}
             </div>
             <div>
-              <button onClick={() => agregarAlCarrito(producto)}>🛒</button>
+              <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => agregarAlCarrito(producto)}>🛒</motion.button>
             </div>
           </motion.li>
         ))}
