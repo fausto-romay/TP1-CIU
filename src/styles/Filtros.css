@@ -10,7 +10,7 @@
 }
 
 .filtros-contenedor label {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     margin: 2rem;
     font-weight: bold;
     color: #a0522d;
@@ -19,7 +19,7 @@
 
 .filtros-contenedor select {
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border: #a0522d 2px solid;
     border-radius: 20px;
     text-transform: uppercase;

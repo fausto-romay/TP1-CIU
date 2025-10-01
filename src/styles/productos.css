@@ -1,60 +1,73 @@
-.productos-contenedor {
-    padding: 2rem;
-    min-height: 100vh;
-}
-
-
-
 .productos-contenedor ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+    padding: 40px 20px;
+    margin: 0 auto;
+    list-style: none;
+    justify-items: center;
 }
 
-.productos-contenedor li {
+.producto-item {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
-}
-
-.productos-contenedor div {
-    margin: 0.5rem;
-    text-align: center;
-    background: #fff;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.productos-contenedor img{
-    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    height: 20rem;
-    aspect-ratio: 16/9;
-    display: block;
+}
+
+.producto-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px #7a7979;
+}
+
+.producto-item img {    
+    width: 100%;
+    height: 200px;
     object-fit: cover;
-    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 16px;
 }
 
-.productos-contenedor button {
-    background-color: #746e6b;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 0.5rem;
-}
-
-.productos-contenedor button:hover {
-    background-color: #8b3e1a;
-}
-
-.productos-contenedor img:hover {
+.producto-item img:hover {
     transform: scale(1.05);
-    transition: transform 0.3s;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.producto-item div {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.producto-item button {
+    background-color: #746e6b;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    margin-top: 12px;
+}
+
+.producto-item button:hover {
+    background-color: #8b3e1a;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .productos-contenedor ul {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 30px 15px;
+  }
+  .producto-item {
+    max-width: 200px;
+    padding: 5px;
+  }
 }

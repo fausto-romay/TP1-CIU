@@ -5,6 +5,7 @@ import productosIniciales from "../data"
 import { useState, useEffect } from "react";
 import Filtros from "../components/Filtros";
 import ToastCarrito from "../components/ToastCarrito";
+import { motion, AnimatePresence } from "framer-motion";
 import "../styles/Carta.css"
 
 function Carta() {
@@ -16,7 +17,6 @@ function Carta() {
     }, []);
 
     const [productos] = useState(productosIniciales);
-    
     const [filtro, setFiltro] = useState({
         categoria: "Todos"
     });
@@ -43,7 +43,17 @@ function Carta() {
         <>
         <Header />
         <div className="carta-contenedor">
-        <h1>{filtro.categoria == "Todos" ? "Nuestra Carta" : filtro.categoria == "cafe" ? "Especialidades en Cafe" : "Nuestra Seleccion de Pasteleria"}</h1>
+            <AnimatePresence mode="wait">
+                <motion.h1
+                key={filtro.categoria}
+                initial={{opacity: 0, y: 20}}
+                animate={{opacity: 1, y: 0}}
+                exit={{opacity: 0, y: -20}}
+                transition={{duration: 0.3}}
+                >
+                {filtro.categoria == "Todos" ? "Nuestra Carta" : filtro.categoria == "cafe" ? "Especialidades en Cafe" : "Nuestra Seleccion de Pasteleria"}
+                </motion.h1>
+            </AnimatePresence>
         <Filtros onChange = {setFiltro}/>
         </div>
         <Productos productos={productosFiltrados} onAddCarrito={mostrarToast}/>

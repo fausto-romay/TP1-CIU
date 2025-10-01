@@ -4,9 +4,26 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    animation: fadeIn 1s ease; 
 }
 
 .carta-contenedor h1 {
+    font-family: 'Poppins', serif;
+    font-weight: 600;
     font-size: 2.5rem;
-    ;
+    letter-spacing: 1px;
+    animation: fadeIn 0.5s ease forwards;
+    color : #8b3e1a;
+}
+
+@media (max-width: 768px) {
+    .carta-contenedor {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 20px 0 0 0;
+    }
+    
+    .carta-contenedor h1 {
+        font-size: 2rem;
+    }
 }
