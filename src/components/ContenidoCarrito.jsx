@@ -67,9 +67,24 @@ function ContenidoCarrito() {
                                             {product.nombre} x {product.cantidad}
                                         </h5>
                                         <div className="mt-2">
-                                            <button className="btn btn-sm btn-outline-dark me-1" onClick={() => disminuirCantidad(product.id)}>-</button>
-                                            <button className="btn btn-sm btn-outline-dark me-1" onClick={() => aumentarCantidad(product.id)}>+</button>
-                                            <button className="btn btn-sm btn-danger" onClick={() => eliminarProducto(product.id)}>Eliminar</button>
+                                            <button className="btn btn-sm btn-outline-dark p-0" 
+                                            onClick={() => disminuirCantidad(product.id)}
+                                            style={{width: "3em"}}
+                                            >
+                                                -
+                                            </button>
+                                            <button className="btn btn-sm btn-outline-dark p-0" 
+                                            onClick={() => aumentarCantidad(product.id)}
+                                            style={{width: "3em"}}
+                                            >
+                                                +
+                                            </button>
+                                            <button className="btn btn-sm btn-danger p-0" 
+                                            onClick={() => eliminarProducto(product.id)}
+                                            style={{width: "3em"}}
+                                            >
+                                                x
+                                            </button>
                                         </div>
                                     </div>
 
