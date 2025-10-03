@@ -1,38 +1,39 @@
 .filtros-contenedor {
-    display: flex;
-    justify-content: end;
-    gap: 1rem;
-    margin: 2rem 0;
+  position: relative;
+  width: 200px;
+  margin: 20px auto;
+  font-family: sans-serif;
 }
 
-.filtros-contenedor div {
-    gap: 0.5rem;
+.menu-boton {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.filtros-contenedor label {
-    font-size: 1.2rem;
-    margin: 2rem;
-    font-weight: bold;
-    color: #a0522d;
-    text-transform: uppercase;
+.menu-opciones {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.filtros-contenedor select {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: #a0522d 2px solid;
-    border-radius: 20px;
-    text-transform: uppercase;
+.menu-opciones li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.filtros-contenedor select:focus {
-    outline: none;
-    border: #a0522d 2px solid;
-    box-shadow: 0 0 5px #a0522d;
-}
-
-.filtros-contenedor option {
-    padding: 0.5rem;
-    font-weight: 200;
-    text-transform: uppercase;
+.menu-opciones li:hover {
+  background: #f5f5f5;
 }

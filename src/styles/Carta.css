@@ -1,8 +1,25 @@
 .carta-contenedor {
-    margin: 5rem;
     text-align: center;
+    align-items: center;
+    animation: fadeIn 1s ease;
+    background: url("https://www.transparenttextures.com/patterns/white-wall.png");
+    background-color: #faf8f5;
+    padding: 2rem;
 }
 
 .carta-contenedor h1 {
+    font-family: 'Poppins', serif;
+    font-weight: 600;
     font-size: 2.5rem;
+    letter-spacing: 1px;
+    animation: fadeIn 0.5s ease forwards;
+    color : #8b3e1a;
+    margin: 2rem;
+}
+
+@media (max-width: 768px) {
+
+.carta-contenedor h1 {
+        font-size: 2rem;
+    }
 }

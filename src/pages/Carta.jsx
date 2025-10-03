@@ -41,9 +41,19 @@ function Carta() {
         <>
         <Header />
         <div className="carta-contenedor">
-            <h1>CARTA</h1>
-        </div>
+            <AnimatePresence mode="wait">
+                <motion.h1
+                key={filtro.categoria}
+                initial={{opacity: 0, y: 20}}
+                animate={{opacity: 1, y: 0}}
+                exit={{opacity: 0, y: -20}}
+                transition={{duration: 0.3}}
+                >
+                {filtro.categoria == "Todos" ? "Nuestra Carta" : filtro.categoria == "Cafeteria" ? "Especialidades en Cafe" : "Nuestra Seleccion de Pasteleria"}
+                </motion.h1>
+            </AnimatePresence>
         <Filtros onChange = {setFiltro}/>
+        </div>
         <Productos productos={productosFiltrados} onAddCarrito={mostrarToast}/>
         <Footer/>
         <ToastCarrito

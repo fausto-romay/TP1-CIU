@@ -10,45 +10,16 @@ import "./styles/App.css";
 import { useState } from 'react';
 
 function App() {
-  const [allProducts, setAllProducts] = useState([])
-  const [total, setTotal] = useState(0)
-  const [countProducts, setCountProducts] = useState(0)
-
+  
   return (
     <ContextProvider>
       <Router>
         <Routes>
-          <Route path="/" 
-                element = {<Home allProducts={allProducts}
-                              setAllProducts={setAllProducts}
-                              total={total}
-                              setTotal={setTotal}
-                              countProducts={countProducts}
-                              setCountProducts={setCountProducts}
-          />}/>
-          <Route path="/carta" 
-                element = {<Carta allProducts={allProducts}
-                                setAllProducts={setAllProducts}
-                                total={total}
-                                setTotal={setTotal}
-                                countProducts={countProducts}
-                                setCountProducts={setCountProducts}/>}/>
+          <Route path="/" element = {<Home />}/>
+          <Route path="/carta" element = {<Carta />}/>
           <Route path="/Logo" element={<Logo />}/>
-          <Route path="/Carrito" 
-                element = {<Carrito allProducts={allProducts}
-                                  setAllProducts={setAllProducts}
-                                  total={total}
-                                  setTotal={setTotal}
-                                  countProducts={countProducts}
-                                  setCountProducts={setCountProducts}
-          />}/>
-          <Route path="/Contacto" 
-                element = {<Contacto allProducts={allProducts}
-                                  setAllProducts={setAllProducts}
-                                  total={total}
-                                  setTotal={setTotal}
-                                  countProducts={countProducts}
-                                  setCountProducts={setCountProducts}/>}/>
+          <Route path="/Carrito" element = {<Carrito />}/>
+          <Route path="/Contacto" element = {<Contacto />}/>
           <Route path="/Nosotros" element={<Nosotros />} />
         </Routes>
       </Router>
