@@ -3,9 +3,11 @@ import Footer from "../components/Footer";
 import Productos from "../components/Productos";
 import Filtros from "../components/Filtros";
 import ToastCarrito from "../components/ToastCarrito";
-import productosIniciales from "../data"
+import productosIniciales from "../data";
 import { useState, useEffect } from "react";
-import "../styles/Carta.css"
+// eslint-disable-next-line no-unused-vars
+import { AnimatePresence, motion } from "framer-motion"; // 👈 IMPORTANTE
+import "../styles/Carta.css";
 
 function Carta() {
     useEffect(() => {
@@ -16,15 +18,14 @@ function Carta() {
     }, []);
 
     const [productos] = useState(productosIniciales);
-    const [filtro, setFiltro] = useState({categoria: "Todos"});
+    const [filtro, setFiltro] = useState({ categoria: "Todos" });
 
     const filtrarProductos = (productos) => {
-        return (productos.filter(producto => {
+        return productos.filter(producto => {
             return (
                 filtro.categoria === "Todos" || filtro.categoria === producto.categoria
-            )
-        })
-        )
+            );
+        });
     };
 
     const productosFiltrados = filtrarProductos(productos);
@@ -39,29 +40,34 @@ function Carta() {
 
     return (
         <>
-        <Header />
-        <div className="carta-contenedor">
-            <AnimatePresence mode="wait">
-                <motion.h1
-                key={filtro.categoria}
-                initial={{opacity: 0, y: 20}}
-                animate={{opacity: 1, y: 0}}
-                exit={{opacity: 0, y: -20}}
-                transition={{duration: 0.3}}
-                >
-                {filtro.categoria == "Todos" ? "Nuestra Carta" : filtro.categoria == "Cafeteria" ? "Especialidades en Cafe" : "Nuestra Seleccion de Pasteleria"}
-                </motion.h1>
-            </AnimatePresence>
-        <Filtros onChange = {setFiltro}/>
-        </div>
-        <Productos productos={productosFiltrados} onAddCarrito={mostrarToast}/>
-        <Footer/>
-        <ToastCarrito
-            show={toastVisible}
-            onClose={() => setToastVisible(false)}
-            message={toastMessage}
-        />
+            <Header />
+            <div className="carta-contenedor">
+                <AnimatePresence mode="wait">
+                    <motion.h1
+                        key={filtro.categoria}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        {filtro.categoria === "Todos"
+                            ? "Nuestra Carta"
+                            : filtro.categoria === "Cafeteria"
+                            ? "Especialidades en Café"
+                            : "Nuestra Selección de Pastelería"}
+                    </motion.h1>
+                </AnimatePresence>
+                <Filtros onChange={setFiltro} />
+            </div>
+            <Productos productos={productosFiltrados} onAddCarrito={mostrarToast} />
+            <Footer />
+            <ToastCarrito
+                show={toastVisible}
+                onClose={() => setToastVisible(false)}
+                message={toastMessage}
+            />
         </>
-    )
+    );
 }
+
 export default Carta;

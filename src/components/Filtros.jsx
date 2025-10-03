@@ -1,5 +1,5 @@
 import "../styles/Filtros.css"
-import {motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 function Filtros({onChange}) {
