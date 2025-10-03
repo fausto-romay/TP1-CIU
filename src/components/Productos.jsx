@@ -1,54 +1,43 @@
 import "../styles/Productos.css";
 import { Context } from "../context/Context";
 import { useContext } from "react";
-import { AnimatePresence } from "framer-motion";
 
 function Productos({ productos, onAddCarrito }) {
-  const { carrito, setCarrito } = useContext(Context);
+    // eslint-disable-next-line no-unused-vars
+    const { carrito, setCarrito } = useContext(Context);
 
-  const agregarAlCarrito = (producto) => {
-    setCarrito([...carrito, producto]);
-    if (onAddCarrito) {
-      onAddCarrito(producto);
-    }
-  };
+    const agregarAlCarrito = (producto) => {
+      setCarrito((prev) => [...prev, producto]);
+      if (onAddCarrito) onAddCarrito(producto);
+    };
 
-  return (
-    <main className="productos-contenedor">
-      {productos.length === 0 ? (
-        <p>No hay productos disponibles.</p>
-      ) : (
-        <ul>
-          <AnimatePresence>
+    return (
+      <main className="productos-contenedor">
+        {productos.length === 0 ? (
+          <p>No hay productos disponibles.</p>
+        ) : (
+          <ul>
             {productos.map((producto) => (
-              <motion.li
-                className="producto-item"
-                key={producto.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-              >
+              <li className="producto-item" key={producto.id}>
                 <img src={producto.imagen} alt={producto.nombre} />
                 <div>
                   <strong>{producto.nombre}</strong> ${producto.precio}
                 </div>
                 <div>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                  <button
+                    className="btn-agregar"
                     onClick={() => agregarAlCarrito(producto)}
+                    aria-label={`Agregar ${producto.nombre} al carrito`}
                   >
                     🛒
-                  </motion.button>
+                  </button>
                 </div>
-              </motion.li>
+              </li>
             ))}
-          </AnimatePresence>
-        </ul>
-      )}
-    </main>
-  );
+          </ul>
+        )}
+      </main>
+    );
 }
 
 export default Productos;

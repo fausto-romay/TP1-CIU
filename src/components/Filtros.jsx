@@ -1,52 +1,44 @@
-import "../styles/Filtros.css"
-import { AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import "../styles/Filtros.css";
+import { useState, useEffect, useRef } from "react";
 
-function Filtros({onChange}) {
+function Filtros({ onChange }) {
+  const [abierto, setAbierto] = useState(false);
+  const [categoria, setCategoria] = useState("Todos");
+  const refBoton = useRef(null);
 
-    const cambioCategoria = (event) => {
-        onChange(prevState => ({
-            ...prevState,
-            categoria: event.target.value
-        }))
-    }
-
-    const [abierto, setAbierto] = useState(false);
-    const [categoria, setCategoria] = useState("Todos");
-
-    const seleccionarCategoria = (categoria) => {
-        setCategoria(categoria);
+  useEffect(() => {
+    const handler = (e) => {
+      if (refBoton.current && !refBoton.current.contains(e.target)) {
         setAbierto(false);
-        cambioCategoria({ target: { value: categoria } });
+      }
+    };
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, []);
+
+  const seleccionarCategoria = (cat) => {
+    setCategoria(cat);
+    setAbierto(false);
+    if (typeof onChange === "function") {
+      onChange((prev) => ({ ...prev, categoria: cat }));
     }
+  };
 
   return (
     <div className="filtros-contenedor">
-
-      <motion.div
-        className="menu-boton"
-        whileTap={{ scale: 0.95 }}
-        onClick={() => setAbierto(!abierto)}
-      >
+      <div className="menu-boton" onClick={() => setAbierto((s) => !s)} ref={refBoton}>
         {categoria}
-      </motion.div>
+      </div>
 
-      <AnimatePresence>
-        {abierto && (
-          <motion.ul
-            className="menu-opciones"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-          >
-            <li onClick={() => seleccionarCategoria("Todos")}>Todos</li>
-            <li onClick={() => seleccionarCategoria("Cafeteria")}>Cafeteria</li>
-            <li onClick={() => seleccionarCategoria("Pasteleria")}>Pastelería</li>
-          </motion.ul>
-        )}
-      </AnimatePresence>
+      {abierto && (
+        <ul className="menu-opciones">
+          <li onClick={() => seleccionarCategoria("Todos")}>Todos</li>
+          <li onClick={() => seleccionarCategoria("Cafeteria")}>Cafeteria</li>
+          <li onClick={() => seleccionarCategoria("Pasteleria")}>Pastelería</li>
+        </ul>
+      )}
     </div>
   );
 }
+
 export default Filtros;

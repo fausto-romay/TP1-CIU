@@ -7,7 +7,6 @@ import Contacto from "./pages/Contacto";
 import Nosotros from "./pages/Nosotros";
 import ContextProvider, { Context } from "./context/Context";
 import "./styles/App.css";
-import { useState } from 'react';
 
 function App() {
   
