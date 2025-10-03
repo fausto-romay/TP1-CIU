@@ -93,7 +93,7 @@ function ContenidoCarrito() {
     } else {
         return (
             <p className="text-center mt-5">
-                El carrito está vacío, ¡agregá lo que quieras consumir para abonar!
+                El carrito está vacío, ¡agregá lo que quieras consumir para abonar! 
             </p>
         );
     }

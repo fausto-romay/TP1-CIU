@@ -1,10 +1,10 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Productos from "../components/Productos";
-import productosIniciales from "../data"
-import { useState, useEffect } from "react";
 import Filtros from "../components/Filtros";
 import ToastCarrito from "../components/ToastCarrito";
+import productosIniciales from "../data"
+import { useState, useEffect } from "react";
 import "../styles/Carta.css"
 
 function Carta() {
@@ -16,18 +16,7 @@ function Carta() {
     }, []);
 
     const [productos] = useState(productosIniciales);
-    
-    const [filtro, setFiltro] = useState({
-        categoria: "Todos"
-    });
-
-    const [toastVisible, setToastVisible] = useState(false);
-    const [toastMessage, setToastMessage] = useState("");
-
-    const mostrarToast = (producto) => {
-        setToastMessage(`${producto.nombre} agregado al carrito ✅`);
-        setToastVisible(true);
-    };
+    const [filtro, setFiltro] = useState({categoria: "Todos"});
 
     const filtrarProductos = (productos) => {
         return (productos.filter(producto => {
@@ -39,6 +28,15 @@ function Carta() {
     };
 
     const productosFiltrados = filtrarProductos(productos);
+    
+    const [toastVisible, setToastVisible] = useState(false);
+    const [toastMessage, setToastMessage] = useState("");
+
+    const mostrarToast = (producto) => {
+        setToastMessage(`${producto.nombre} agregado al carrito ✅`);
+        setToastVisible(true);
+    };
+
     return (
         <>
         <Header />

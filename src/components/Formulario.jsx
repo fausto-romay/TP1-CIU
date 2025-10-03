@@ -101,6 +101,9 @@ function Formulario() {
 
                 <button type="submit">Enviar</button>
             </form>
+            <div className="alert alert-secondary mx-auto" style={{ maxWidth: "500px" }}>
+                    En las próximas <strong>24hs</strong> te llegara un mail confirmando tu reserva, en caso de no tener disponibilidad se te ofreceran distintos horarios para tu reserva.
+            </div>
         </div>
     )
 }
