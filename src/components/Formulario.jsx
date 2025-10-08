@@ -38,14 +38,6 @@ function Formulario() {
         return valor;
     }
 
-    /* 
-        handleChange se ejecuta cada vez que el usuario escribe o cambia algo en un input.
-        si escribis tu nombre el estado pasa a ser:
-
-        { nombre: "Juan", email: "", fecha: "", hora: "", mensaje: "" }
-        no se si esta bien....
-    */
-
     function handleChange(valor) {
         const { name, value } = valor.target;
         setForm((f) => ({ ...f, [name]: value }));
